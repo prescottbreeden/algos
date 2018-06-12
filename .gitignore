@@ -1,0 +1,6 @@
+bin/
+env/
+venv/
+.vscode
+*.pyc
+node_modules/
