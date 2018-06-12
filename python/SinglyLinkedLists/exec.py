@@ -9,4 +9,7 @@ def BuildMe(count):
 
 BuildMe(10)
 bob.print_me()
-
+bob.add_to_front(Node(42))
+bob.print_me()
+print(bob.contains(100))
+print(bob.contains(42))
