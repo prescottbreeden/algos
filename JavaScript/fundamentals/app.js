@@ -1,7 +1,8 @@
 const basic = require('./basic13');
 const maths = require('./maths');
 const stars = require('./starart');
-const modulo = require('./modulos');
+const part2 = require('./part2');
+const clock = require('./clockHandAngles');
 
 let result;
 function createArray(arr, start, stop) {
@@ -46,26 +47,29 @@ result = maths.Factorial(3);
 // console.log(stars.drawCenteredStars(12, 30));
 // console.log(stars.drawCenteredStars(18, 30));
 
-result = modulo.threesFives(100,4000000);
+result = part2.threesFives(100,4000000);
 
-result = modulo.coinReturn(12.42);
+result = part2.coinReturn(12.42);
 
-result = modulo.messyMath(4);
-result = modulo.messyMath(8);
-result = modulo.messyMath(15);
+result = part2.messyMath(4);
+result = part2.messyMath(8);
+result = part2.messyMath(15);
 
+result = part2.twelveBarBlues();
 
+result = part2.fib(4);
+result = part2.fib(7);
 
-
-
-
-
-
-
-
-
+let time = Math.floor(Math.random()*700000);
+clock.clockHands(time);
+clock.digitalTime(time);
 
 
 
 
-console.log(result);
+
+
+
+
+
+// console.log(result);
