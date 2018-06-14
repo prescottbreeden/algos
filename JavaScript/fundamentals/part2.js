@@ -54,5 +54,12 @@ module.exports = {
         }
         return fib(n-1) + fib(n-2)
 
+    },
+
+    extractDigit: (num, digitNum) => {
+        // function that given a number and a digit number, returns the numerical value of that digit
+        // 0 is 1s, 1 is 10s, 2 is 100s, etc.
+        digit = Math.floor(num/Math.pow(10,digitNum)) % 10;
+        return digit
     }
 }

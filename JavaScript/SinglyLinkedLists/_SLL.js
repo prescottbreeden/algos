@@ -27,4 +27,14 @@ module.exports = class SLL {
         return this;
     }
 
+    printMe(){
+        let printedVals = [];
+        this.runner = this.head;
+        while(this.runner != null) {
+            printedVals.push(this.runner.val);
+            this.runner = this.runner.next;
+        }
+        console.log(printedVals);
+    }
+
 }
