@@ -10,7 +10,21 @@
 // sample output: [75, 67, 40, 33]
 
 function roundgrades(arr) {
-
-
-
+	for(let i = 0; i < arr.length; i++) {
+		let grade = arr[i];
+		if(grade < 38) {
+			continue;
+		}
+		else if((grade+1) % 5 === 0 || (grade+2) % 5 === 0) {
+			grade = grade/10;
+			grade = (Math.round(grade * 2) / 2).toFixed(1);
+			grade *= 10;
+		}
+		console.log(grade);
+		arr[i] = grade;
+	}
+	return arr;
 }
+
+roundgrades([73, 67, 38, 33]);
+
