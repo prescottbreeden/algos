@@ -8,6 +8,7 @@ const node = require('./SinglyLinkedLists/_Node');
 const Sort = require('./sorts/Sort');
 const zip = require('./SinglyLinkedLists/SLLfunctions');
 
+
 // let result;
 // function createArray(arr, start, stop) {
 //     for(let i = start; i <= stop; i++) {
@@ -34,5 +35,3 @@ for(let i = 10; i > 0; i--) {
 list1.printMe();
 list2.printMe();
 
-list3 = zip.zipSLists(list1, list2);
-list3.printMe();
