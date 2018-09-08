@@ -20,4 +20,4 @@ def list_factors(num, left_side=None, right_side=None):
         print(left_side)
 
 
-list_factors(72)
+list_factors(28)
