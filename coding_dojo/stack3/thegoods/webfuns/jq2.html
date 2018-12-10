@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <style>
+      .classy{
+          border: 2px solid black;
+          height: 100px;
+          width: 200px;
+      }
+  </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="dojo">
+        
+    </div>
+    <ul id="msg-board">
+
+    </ul>
+    <form action="">
+        <input type="text" placeholder="bloh">
+        <input type="submit" value="submitify!">
+    </form>
+    <button>CLick me to do the stuff!</button>
+</body>
+<script>
+
+    var imgSpot = "./ninja.jpg";
+    function genImg(imgUrl)
+    {
+        return "<img src='"+imgUrl+"'>";
+    }
+
+    function displayNinjas(){
+        for(let i = 0; i<8; i++)
+        {
+            $("#dojo").append(genImg(imgSpot));
+        }
+    }
+    
+    function displayBiz(text)
+    {
+        $('ul').append('<li>' + text + '</li>');
+    }
+
+    $(document).ready(function(){
+        console.log("jQuery was successfully imported!");
+        $("#dojo").on('click', 'img', function(){
+            // $(this).addClass("classy")
+            $(this).hide();
+        });
+
+        $('form').submit(function(e){
+            e.preventDefault();
+            // grab data
+            var data = $('input[type="text"]').val();
+            // display it
+            displayBiz(data);
+            // reset input
+            $('input[type="text"]').val("");
+        });
+    })
+    $('button').click(displayNinjas);
+    </script>
+</html>
