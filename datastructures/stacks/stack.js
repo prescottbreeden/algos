@@ -1,42 +1,27 @@
-// First in last out
 class Stack {
 	constructor() {
 		this.items = [];
 	}
 
-	// push: add an element at the top of the stack
 	push(item) {
 		this.items.push(item);
 		return this
 	}
 
-	// pop: remove an element from the stack
-	// if called on empty stack it indicates "Underflow"
 	pop() {
-		// return top most element in the stack
-		// and removes it from the stack
-		// underflow if stack is empty
 		if (this.items.length == 0)
 			return "Underflow"
 		return this.items.pop()
 	}
 
-	// peek: returns the top most elements in the stack
-	// but doesn't delete them
 	peek() {
-		// return the top most element from the stack
-		// do not delete!
 		return this.items[this.items.length -1];
 	}
 
-	// isEmpty: returns true if the stack is empty
 	isEmpty() {
-		// return true if stack is empty
 		return this.items.length == 0;
 	}
 
-	// printStack: returns a string in which all 
-	// elements of a stack are concatenated
 	printStack() {
 		var str = "";
 		for (let i = 0; i < this.items.length; i++)

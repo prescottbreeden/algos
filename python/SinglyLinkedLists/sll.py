@@ -43,7 +43,6 @@ class SLL(object):
         return self
 
     def print_me(self):
-        print("###################")
         self.runner = self.head
         while(self.runner is not None):
             print(self.runner)
