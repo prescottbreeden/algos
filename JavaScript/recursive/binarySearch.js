@@ -1,4 +1,4 @@
-function binarySearch(val, array, start = 0, end = (array.length-1), counter = 0) {
+function binarySearch(val, array, start=0, end=(array.length-1), counter=0) {
     counter++;
     var mid = Math.ceil((end-start)/2) + start;
     console.log('inside call ' + counter)
@@ -31,9 +31,28 @@ function binarySearch(val, array, start = 0, end = (array.length-1), counter = 0
     console.log(`stack ${counter} falling off`)
 }
 
-binarySearch(4, [1,4,5,7,9,11])
-binarySearch(1, [1,4,5,7,9,11])
-binarySearch(11, [1,4,5,7,9,11])
-binarySearch(6, [1,4,5,7,9,11])
-binarySearch(20, [1,4,5,7,9,11,12,13,14,15,16,17,18,19,20])
-binarySearch(17, [1,4,5,7,9,11,12,13,14,15,16,18,19,20])
+console.log("============================");
+console.log("searching 4 in [1,4,5,7,9,11]");
+console.log("============================");
+binarySearch(4, [1,4,5,7,9,11]);
+console.log("============================");
+console.log("searching 1 in [1,4,5,7,9,11]");
+console.log("============================");
+binarySearch(1, [1,4,5,7,9,11]);
+console.log("============================");
+console.log("searching 11 in [1,4,5,7,9,11]");
+console.log("============================");
+binarySearch(11, [1,4,5,7,9,11]);
+console.log("============================");
+console.log("searching 6 in [1,4,5,7,9,11]");
+console.log("============================");
+binarySearch(6, [1,4,5,7,9,11]);
+console.log("============================");
+console.log("searching 20 in [1,4,5,7,9,11,12,13,14,15,16,17,18,19,20]");
+console.log("============================");
+binarySearch(20, [1,4,5,7,9,11,12,13,14,15,16,17,18,19,20]);
+console.log("============================");
+console.log("searching 17 in [1,4,5,7,9,11,12,13,14,15,16,17,18,19,20]");
+console.log("============================");
+binarySearch(17, [1,4,5,7,9,11,12,13,14,15,16,18,19,20]);
+console.log("============================");

@@ -5,9 +5,7 @@ namespace SinglyLinkedLists
 {
     public class SLL
     {
-        public string name { get; set; }
         public Node head { get; set; }
-        public Node runner { get; set; }
         public SLL(Node node)
         {
             this.head = node;
@@ -35,44 +33,44 @@ namespace SinglyLinkedLists
             }
             else
             {
-                this.runner = this.head;
-                while(this.runner.next != null)
+                Node runner = this.head;
+                while(runner.next != null)
                 {
-                    this.runner = this.runner.next;
+                    runner = runner.next;
                 }
-                this.runner.next = node;
+                runner.next = node;
             }
             return this;
         }
 
         public Node Contains(string memoryLocation)
         {
-            this.runner = this.head;
-            while(this.runner != null)
+            Node runner = this.head;
+            while(runner != null)
             {
-                if(this.runner.memoryLocation == memoryLocation)
+                if(runner.memoryLocation == memoryLocation)
                 {
-                    return this.runner;
+                    return runner;
                 }
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
             throw new ArgumentNullException("node search", "Memory location is null");
         }
         public Node Get(string memoryLocation)
         {
             Node target = Contains(memoryLocation);
-            this.runner = this.head;
-            while(this.runner.next != null)
+            Node runner = this.head;
+            while(runner.next != null)
             {
-                if(this.runner.next.memoryLocation == target.memoryLocation)
+                if(runner.next.memoryLocation == target.memoryLocation)
                 {
                     // set target to the node with memorylocation
                     // target = this.runner.next;
 
                     // remove connection to target
-                    this.runner.next = this.runner.next.next;
+                    runner.next = runner.next.next;
                 }
-                this.runner = this.runner.next;
+                runner = runner.next;
 
             }
             return target;
@@ -81,31 +79,34 @@ namespace SinglyLinkedLists
         {
             Node maxValue = this.head;
             Node scissors = this.head;
-            this.runner = this.head;
-            while(this.runner.next != null)
+            Node runner = this.head;
+            while(runner.next != null)
             {
-                if(this.runner.next.val > maxValue.val)
+                if(runner.next.val > maxValue.val)
                 {
                     // set target to the node with higher value
-                    maxValue = this.runner.next;
-                    scissors = this.runner;
+                    maxValue = runner.next;
+                    scissors = runner;
                 }
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
             // remove connection to target node
-            scissors.next = this.runner.next.next;
+            scissors.next = runner.next.next;
             return maxValue;
         }
+
         public void PrintHead()
         {
             System.Console.WriteLine(this.head);
         }
+        
         public void ReadContents(string memoryLocation)
         {
             Node target = Contains(memoryLocation);
             var contents = target.ToString();
             System.Console.WriteLine(contents);
         }
+        
         public SLL RemoveFront()
         {
             if(this.head == null)
@@ -115,69 +116,74 @@ namespace SinglyLinkedLists
             this.head = this.head.next;
             return this;
         }
+        
         public SLL RemoveBack()
         {
-            this.runner = this.head;
-            while(this.runner.next.next != null)
+            Node runner = this.head;
+            while(runner.next.next != null)
             {
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
-            this.runner.next = null;
+            runner.next = null;
             return this;
         }
+        
         public SLL MoveMinToFront()
         {
-            this.runner = this.head;
+            Node runner = this.head;
             Node scissor = new Node();
             Node minValue = this.head;
-            while(this.runner.next != null)
+            while(runner.next != null)
             {
-                if(this.runner.next.val < minValue.val)
+                if(runner.next.val < minValue.val)
                 {
-                    minValue = this.runner.next;
-                    scissor = this.runner;
+                    minValue = runner.next;
+                    scissor = runner;
                 }
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
             scissor.next = scissor.next.next;
             this.AddToFront(minValue);
             return this;
         }
+        
         public int totalLength()
         {
             int counter = 0;
-            this.runner = this.head;
-            while(this.runner != null)
+            Node runner = this.head;
+            while(runner != null)
             {
                 counter += 1;
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
             return counter;
         }
+        
         public void PrintSLL()
         {
             string debugMe = "SLL: ";
-            this.runner = this.head;
-            while(this.runner != null)
+            Node runner = this.head;
+            while(runner is bool value)
             {
-                var node = this.runner.val.ToString();
+                var node = runner.val.ToString();
                 debugMe += $"{node}, ";
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
-            if(this.runner == null)
+            if(runner is null)
             {
                 debugMe += "null";
             }
             System.Console.WriteLine(debugMe);
         }
+        
         public int LastNode(Node node)
         {
-            this.runner = node;
-            while(this.runner.next != null)
+            Node runner = node;
+            while(runner.next != null)
             {
-                this.runner = this.runner.next;
+                runner = runner.next;
             }
-            return this.runner.val;
+            return runner.val;
         }
 
 
