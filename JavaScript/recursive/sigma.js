@@ -19,6 +19,20 @@
  * - specific and consistent return value given any input
  * - no side effects on external variable states
  *
+ *
+ *  Order of progression:
+ *    (beginner)
+ *   - countdown
+ *   - sigma
+ *   - factorial (pos and neg)
+ *   - floodfill
+ *
+ *    (intermediate)
+ *   - queens
+ *
+ *    (advanced)
+ *   - 
+ *
  */
 
 // iterative
