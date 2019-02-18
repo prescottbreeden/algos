@@ -25,13 +25,14 @@
  *   - countdown
  *   - sigma
  *   - factorial (pos and neg)
- *   - floodfill
+ *   - fibonacci
  *
  *    (intermediate)
- *   - queens
+ *   - binary search
+ *   - floodfill
  *
  *    (advanced)
- *   - 
+ *   - queens
  *
  */
 
@@ -58,11 +59,17 @@ function Icountdown(n) {
   }
 }
 
-function countdown(n) {
+function countdown(n, counter=0) {
+  counter++;
+  console.log("+++ New Stack Frame #", counter);
   if (n > 0 ) {
-    console.log(n);
-    return countdown(n-1);
+    console.log("Countdown: ", n);
+    countdown(n-1, counter);
+  } else {
+    console.log("If check failed --- Base Case Hit")
   }
+
+  console.log("--- Dropping Stack #", counter);
 }
 
 // non-memoized
@@ -81,11 +88,20 @@ function sigmaM(num, val=1) {
   return val + sigmaM(num, ++val);
 }
 
+function fibonacci(n)  {
+    if(n == 0)
+        return 0;
+    else if(n == 1)
+      return 1;
+   else
+      return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 // console.log(sigmaM(5));
 // console.log(sigmaN(5));
 // Icountdown(5);
-// countdown(5);
-console.log(factorial(6));
-console.log(factorial(-6));
-console.log(factorial(5));
-console.log(factorial(-5));
+countdown(5);
+// console.log(factorial(6));
+// console.log(factorial(-6));
+// console.log(factorial(5));
+// console.log(factorial(-5));
